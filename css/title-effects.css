@@ -1,0 +1,62 @@
+/* Special effects for section titles */
+@keyframes gradient-shift {
+    0% {
+        color: var(--accent-color);
+    }
+    25% {
+        color: #10b981;
+    }
+    50% {
+        color: #3b82f6;
+    }
+    75% {
+        color: #10b981;
+    }
+    100% {
+        color: var(--accent-color);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 20px var(--accent-color);
+    }
+    50% {
+        text-shadow: 0 0 30px var(--accent-color), 0 0 40px var(--accent-glow);
+    }
+}
+
+@keyframes underline-expand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+.section-title {
+    color: var(--accent-color);
+    animation: gradient-shift 6s ease infinite;
+    position: relative;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px var(--accent-color);
+}
+
+.section-title::after {
+    animation: underline-expand 0.8s ease-out forwards, glow-pulse 3s ease-in-out infinite 0.8s;
+}
+
+/* Hover effect for section titles */
+.section-title:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Add special class for hero title with different animation */
+.typing-text {
+    animation: glow-pulse 2s ease-in-out infinite;
+    display: inline-block;
+    padding-right: 5px;
+}

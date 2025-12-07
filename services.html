@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدماتنا في تطوير التطبيقات والمواقع - باقات متنوعة تناسب احتياجاتك">
+    <title>⭐ الخدمات | AbdullahStudio - Portfolio</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="الخدمات - AbdullahStudio">
+    <meta property="og:description" content="خدماتنا في تطوير التطبيقات والمواقع مع باقات أسعار مرنة">
+    <meta property="og:url" content="https://lovely-druid-cdd494.netlify.app/services.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="favicon.png" alt="A"
+                    style="width: 32px; height: 32px; margin-left: 8px; vertical-align: middle;">
+                AbdullahStudio
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link" data-i18n="home">الرئيسية</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="about">من أنا</a></li>
+                <li><a href="index.html#services" class="nav-link active" data-i18n="services">خدماتي</a></li>
+                <li><a href="index.html#portfolio" class="nav-link" data-i18n="portfolio">أعمالي</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="contact">تواصل معي</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="icon-btn" onclick="toggleLanguage()">EN</button>
+                <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 class="fade-in-up" data-i18n="services_title">خدماتنا الاحترافية</h1>
+            <p class="fade-in-up" data-i18n="services_subtitle">حلول متكاملة لتطوير تطبيقاتك ومواقعك بجودة عالية</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Mobile App Development -->
+                <div class="service-card glass fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 data-i18n="service_mobile_title">تطوير تطبيقات الموبايل</h3>
+                    <p data-i18n="service_mobile_desc">تطبيقات Flutter احترافية متعددة المنصات (Android & iOS) بتصميم
+                        حديث وأداء عالي</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_cross_platform">تطبيق واحد لجميع
+                                المنصات</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_modern_ui">واجهات عصرية وجذابة</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_firebase">تكامل مع Firebase</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_api">ربط مع APIs</span></li>
+                    </ul>
+                </div>
+
+                <!-- Web Development -->
+                <div class="service-card glass fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 data-i18n="service_web_title">تطوير المواقع</h3>
+                    <p data-i18n="service_web_desc">مواقع ويب احترافية متجاوبة مع جميع الأجهزة باستخدام أحدث التقنيات
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_responsive">متجاوب مع كل
+                                الشاشات</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_seo">محسّن لمحركات البحث</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_fast">سرعة تحميل فائقة</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_secure">آمن ومحمي</span></li>
+                    </ul>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="service-card glass fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 data-i18n="service_design_title">تصميم واجهات المستخدم</h3>
+                    <p data-i18n="service_design_desc">تصاميم احترافية توفر تجربة مستخدم مميزة وجذابة</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_modern_design">تصميم عصري وجميل</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_ux">تجربة مستخدم سلسة</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_prototype">نماذج تفاعلية</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_brand">هوية بصرية متكاملة</span></li>
+                    </ul>
+                </div>
+
+                <!-- Logo & Branding -->
+                <div class="service-card glass fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 data-i18n="service_branding_title">تصميم الشعارات والهوية</h3>
+                    <p data-i18n="service_branding_desc">شعارات احترافية وهوية بصرية مميزة لعلامتك التجارية</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_unique_logo">شعار فريد ومميز</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_brand_guide">دليل الهوية
+                                البصرية</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_source_files">ملفات مصدرية عالية
+                                الجودة</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feature_revisions">3 تعديلات مجانية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="pricing_title">باقات الأسعار</h2>
+            <p class="section-subtitle" data-i18n="pricing_subtitle">اختر الباقة المناسبة لمشروعك</p>
+
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card glass fade-in-up">
+                    <div class="package-tag" data-i18n="package_basic">أساسية</div>
+                    <h3 data-i18n="package_basic_name">الباقة الأساسية</h3>
+                    <div class="price">
+                        <span class="currency" data-i18n="from">من</span>
+                        <span class="amount">$300</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="basic_feature_1">تصميم بسيط وأنيق</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="basic_feature_2">5 صفحات/شاشات</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="basic_feature_3">متجاوب مع الأجهزة</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="basic_feature_4">تسليم خلال أسبوعين</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="basic_feature_5">تعديل واحد مجاني</span></li>
+                        <li><i class="fas fa-times"></i> <span data-i18n="basic_feature_6" style="opacity: 0.5;">لوحة
+                                تحكم</span></li>
+                        <li><i class="fas fa-times"></i> <span data-i18n="basic_feature_7" style="opacity: 0.5;">API
+                                Integration</span></li>
+                    </ul>
+                    <a href="#contact" class="btn" data-i18n="choose_package">اختر الباقة</a>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="pricing-card glass fade-in-up popular">
+                    <div class="popular-badge" data-i18n="most_popular">الأكثر طلباً</div>
+                    <div class="package-tag" data-i18n="package_standard">قياسية</div>
+                    <h3 data-i18n="package_standard_name">الباقة القياسية</h3>
+                    <div class="price">
+                        <span class="currency" data-i18n="from">من</span>
+                        <span class="amount">$600</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_1">تصميم احترافي متقدم</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_2">10 صفحات/شاشات</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_3">لوحة تحكم بسيطة</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_4">تكامل API</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_5">Firebase
+                                Integration</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_6">تسليم خلال 3 أسابيع</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="standard_feature_7">3 تعديلات مجانية</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn" data-i18n="choose_package">اختر الباقة</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card glass fade-in-up">
+                    <div class="package-tag" data-i18n="package_premium">متقدمة</div>
+                    <h3 data-i18n="package_premium_name">الباقة المتقدمة</h3>
+                    <div class="price">
+                        <span class="currency" data-i18n="from">من</span>
+                        <span class="amount">$1200</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_1">تصميم فريد ومخصص</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_2">صفحات/شاشات غير
+                                محدودة</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_3">لوحة تحكم متقدمة</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_4">Multi-language
+                                Support</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_5">دعم فني لمدة 3 أشهر</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_6">تسليم خلال شهر</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="premium_feature_7">تعديلات غير محدودة</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn" data-i18n="choose_package">اختر الباقة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="calculator_title">حاسبة التكلفة</h2>
+            <p class="section-subtitle" data-i18n="calculator_subtitle">احسب تكلفة مشروعك التقريبية</p>
+
+            <div class="calculator-container glass">
+                <form id="cost-calculator">
+                    <div class="calculator-grid">
+                        <div class="calc-group">
+                            <label data-i18n="calc_project_type">نوع المشروع</label>
+                            <select id="project-type" required>
+                                <option value="" data-i18n="calc_select">اختر...</option>
+                                <option value="mobile" data-i18n="calc_mobile">تطبيق موبايل</option>
+                                <option value="web" data-i18n="calc_web">موقع ويب</option>
+                                <option value="both" data-i18n="calc_both">تطبيق وموقع</option>
+                                <option value="design" data-i18n="calc_design">تصميم فقط</option>
+                            </select>
+                        </div>
+
+                        <div class="calc-group">
+                            <label data-i18n="calc_pages">عدد الصفحات/الشاشات</label>
+                            <input type="number" id="pages-count" min="1" max="50" value="5" required>
+                        </div>
+
+                        <div class="calc-group full-width">
+                            <label data-i18n="calc_features">المي زات المطلوبة</label>
+                            <div class="features-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="100"
+                                        data-i18n-label="calc_admin_panel">
+                                    <span data-i18n="calc_admin_panel">لوحة تحكم</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="150" data-i18n-label="calc_api">
+                                    <span data-i18n="calc_api">تكامل API</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="120" data-i18n-label="calc_auth">
+                                    <span data-i18n="calc_auth">نظام تسجيل الدخول</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="180" data-i18n-label="calc_payment">
+                                    <span data-i18n="calc_payment">بوابة دفع</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="90" data-i18n-label="calc_multilang">
+                                    <span data-i18n="calc_multilang">متعدد اللغات</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="feature" value="130" data-i18n-label="calc_chat">
+                                    <span data-i18n="calc_chat">نظام محادثة</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-result">
+                        <div class="result-label" data-i18n="calc_estimated_cost">التكلفة التقريبية:</div>
+                        <div class="result-amount">$<span id="calculated-cost">300</span></div>
+                        <small class="result-note" data-i18n="calc_note">* التكلفة النهائية تعتمد على تفاصيل
+                            المشروع</small>
+                    </div>
+
+                    <button type="button" class="btn" id="request-quote" data-i18n="request_quote">طلب عرض سعر</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <div class="glass" style="padding: 3rem; text-align: center;">
+                <h2 data-i18n="cta_title">جاهز لبدء مشروعك؟</h2>
+                <p data-i18n="cta_desc">تواصل معي الآن للحصول على استشارة مجانية</p>
+                <div class="cta-buttons">
+                    <a href="mailto:bnbmwmrnrnmb@gmail.com" class="btn ripple">
+                        <i class="fas fa-envelope"></i> <span data-i18n="email_us">راسلني</span>
+                    </a>
+                    <a href="https://wa.me/9647728306149" target="_blank" class="btn ripple"
+                        style="background: #25D366;">
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="whatsapp_us">واتساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); background: var(--glass-bg);">
+        <p data-i18n="footer">© 2024 عبدالله سلام. جميع الحقوق محفوظة.</p>
+        <div
+            style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.9rem;">
+            <a href="privacy-policy.html" data-i18n="privacy_policy"
+                style="color: var(--text-secondary); text-decoration: none;">سياسة الخصوصية</a>
+            <a href="terms-of-service.html" data-i18n="terms_service"
+                style="color: var(--text-secondary); text-decoration: none;">شروط الاستخدام</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/lang.js"></script>
+    <script src="js/services.js"></script>
+</body>
+
+</html>

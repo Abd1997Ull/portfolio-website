@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Abdullah Salam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #6366f1;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            color: #666;
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            color: #6366f1;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        p,
+        li {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .project h4 {
+            color: #6366f1;
+            margin-bottom: 8px;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .value-tag {
+            background: #e8f4f8;
+            color: #0891b2;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <h1>Abdullah Salam</h1>
+            <h2>Flutter Developer & Web Developer</h2>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">📧 bnbmwmrnrnmb@gmail.com</div>
+            <div class="contact-item">📱 07728306149 – 07882930896</div>
+            <div class="contact-item">🌐 Arabic (Fluent) | English (Intermediate)</div>
+        </div>
+
+        <div class="section">
+            <h3>About Me</h3>
+            <p>I'm Abdullah, an app and web developer with 4 years of experience delivering integrated digital
+                solutions. This includes UI/UX design, building applications using Flutter, and developing modern
+                websites using HTML, CSS, and JavaScript. I focus on creating professional, fast, responsive projects
+                with excellent user experience.</p>
+        </div>
+
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">REST API</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Work Experience</h3>
+            <ul>
+                <li>Full app development from scratch to deployment</li>
+                <li>Attendance/departure systems, login, user activation</li>
+                <li>Responsive and fast-loading website design</li>
+                <li>Landing pages development</li>
+                <li>Accounting and management systems</li>
+                <li>Real estate apps, construction apps, internet subscriber management</li>
+                <li>App maintenance, bug fixing, and performance optimization</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Notable Projects</h3>
+            <div class="project">
+                <h4>Internet Subscriber Management App – Flutter</h4>
+                <p>Activation, payment, user management, and account details system with Firebase integration and
+                    database management.</p>
+            </div>
+            <div class="project">
+                <h4>Construction Management App – Flutter</h4>
+                <p>Project management, material tracking, photo uploads, and manager notifications.</p>
+            </div>
+            <div class="project">
+                <h4>Real Estate Website – HTML/CSS/JS</h4>
+                <p>Search interface, property listings, details page, and enhanced user experience.</p>
+            </div>
+            <div class="project">
+                <h4>Admin Dashboard – Flutter Web</h4>
+                <p>Data management, statistics, table views, and professional information filtering.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Education</h3>
+            <p>Middle School Graduate</p>
+        </div>
+
+        <div class="section">
+            <h3>Work Values</h3>
+            <div class="values-grid">
+                <span class="value-tag">Commitment</span>
+                <span class="value-tag">Professionalism</span>
+                <span class="value-tag">Quality</span>
+                <span class="value-tag">Precision</span>
+                <span class="value-tag">Fast Delivery</span>
+                <span class="value-tag">Clean Code</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Career Goals</h3>
+            <p>I aim to develop more professional systems, expand my expertise in Flutter and web development, and build
+                projects that provide real value and high-quality user experience for clients.</p>
+        </div>
+    </div>
+</body>
+
+</html>

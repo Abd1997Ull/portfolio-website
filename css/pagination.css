@@ -1,0 +1,130 @@
+/* Pagination Styling */
+
+.pagination-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.pagination-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pagination-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-number:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.pagination-number.active {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+
+.pagination-ellipsis {
+    color: var(--text-secondary);
+    padding: 0 0.5rem;
+}
+
+.pagination-info {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pagination-controls {
+        gap: 0.375rem;
+    }
+
+    .pagination-btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .pagination-btn span {
+        display: none;
+    }
+
+    .pagination-number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.875rem;
+    }
+
+    .pagination-numbers {
+        gap: 0.375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8125rem;
+    }
+
+    /* Show fewer page numbers on small screens */
+    .pagination-number:nth-child(n+5):nth-last-child(n+3) {
+        display: none;
+    }
+}

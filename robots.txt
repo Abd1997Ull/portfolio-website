@@ -1,0 +1,21 @@
+# robots.txt for Abdullah Salam Portfolio
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /admin/
+
+# Disallow Firebase config (security)
+Disallow: /js/firebase-config.js
+
+# Allow CSS and JS for Google
+User-agent: Googlebot
+Allow: /css/*.css
+Allow: /js/*.js
+
+# Sitemap location
+Sitemap: https://lovely-druid-cdd494.netlify.app/sitemap.xml

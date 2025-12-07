@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="عبدالله سلام - مطور Flutter و Web | 4 سنوات خبرة في تطوير التطبيقات والمواقع الاحترافية">
+    <meta name="keywords"
+        content="Flutter Developer, Web Developer, HTML, CSS, JavaScript, Firebase, Portfolio, عبدالله سلام, مطور تطبيقات">
+    <meta name="author" content="Abdullah Salam">
+    <title>⭐ AbdullahStudio | Portfolio - Flutter & Web Developer</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AbdullahStudio - Flutter & Web Developer">
+    <meta property="og:description"
+        content="Portfolio of Abdullah Salam - 4 years experience in Flutter and Web Development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lovely-druid-cdd494.netlify.app/">
+    <meta property="og:image" content="https://lovely-druid-cdd494.netlify.app/favicon.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AbdullahStudio - Flutter & Web Developer">
+    <meta name="twitter:description"
+        content="Portfolio of Abdullah Salam - 4 years experience in Flutter and Web Development">
+    <meta name="twitter:image" content="https://lovely-druid-cdd494.netlify.app/favicon.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MNPJEZC3X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8MNPJEZC3X');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/title-effects.css">
+    <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <link rel="stylesheet" href="css/pagination.css">
+</head>
+
+<body>
+    <a href="https://wa.me/9647728306149" target="_blank" class="whatsapp-float" title="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="#" class="logo"><img src="favicon.png" alt="A"
+                    style="width: 32px; height: 32px; margin-left: 8px; vertical-align: middle;"> AbdullahStudio</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-i18n="home" onclick="setActiveLink(this)">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="about" onclick="setActiveLink(this)">About</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="services" onclick="setActiveLink(this)">Services</a>
+                </li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="portfolio"
+                        onclick="setActiveLink(this)">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="contact" onclick="setActiveLink(this)">Contact</a>
+                </li>
+            </ul>
+            <script>
+                function setActiveLink(el) {
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    el.classList.add('active');
+                }
+
+                // تحديث الرابط النشط عند التمرير
+                window.addEventListener('scroll', function () {
+                    const sections = document.querySelectorAll('section');
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    let current = 'home';
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop - 150;
+                        if (window.scrollY >= sectionTop) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + current) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            </script>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="icon-btn" onclick="toggleLanguage()">AR</button>
+                <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <div class="parallax-bg">
+            <div class="parallax-shape"
+                style="width: 300px; height: 300px; background: var(--accent-color); top: 10%; left: 10%;"></div>
+            <div class="parallax-shape"
+                style="width: 200px; height: 200px; background: var(--accent-glow); top: 50%; right: 20%;"></div>
+            <div class="parallax-shape"
+                style="width: 250px; height: 250px; background: var(--accent-color); bottom: 10%; left: 50%;"></div>
+        </div>
+        <div class="container hero-content fade-in-up">
+            <h1 class="typing-text" data-i18n="hero_title" onclick="initTypingEffect()" style="cursor: pointer;"
+                title="Click to replay effect">Flutter + HTML/CSS/JavaScript Developer</h1>
+            <p class="fade-in-up" data-i18n="hero_desc">Building modern digital solutions with 4 years of experience.
+            </p>
+            <div class="cta-group fade-in-up">
+                <a href="#portfolio" class="btn ripple" data-i18n="cta_portfolio">View My Work</a>
+                <a href="#contact" class="btn ripple"
+                    style="background: transparent; border: 2px solid var(--accent-color); color: var(--text-primary);"
+                    data-i18n="cta_contact">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="about_title">About Me</h2>
+
+            <!-- Statistics Section -->
+            <div class="stats-grid fade-in-up"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="glass" style="padding: 2rem; text-align: center;">
+                    <div
+                        style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
+                        4+</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_years">Years Experience
+                    </p>
+                </div>
+                <div class="glass" style="padding: 2rem; text-align: center;">
+                    <div
+                        style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
+                        20+</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_projects">Completed
+                        Projects</p>
+                </div>
+                <div class="glass" style="padding: 2rem; text-align: center;">
+                    <div
+                        style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
+                        100%</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_satisfaction">Client
+                        Satisfaction</p>
+                </div>
+                <div class="glass" style="padding: 2rem; text-align: center;">
+                    <div
+                        style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
+                        9+</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_technologies">
+                        Technologies</p>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="glass fade-in-up"
+                style="padding: 2rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="who_am_i">Who Am I?</h3>
+                    <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 1rem;"
+                        data-i18n="about_desc">I'm Abdullah, a developer with 4 years of experience in designing and
+                        developing modern digital solutions using Flutter for cross-platform apps and
+                        HTML/CSS/JavaScript for professional responsive websites.</p>
+                    <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;"
+                        data-i18n="about_desc_2">I specialize in creating smooth, fast interfaces with beautiful
+                        interactive animations. My code is clean, organized, and scalable, ensuring long-term
+                        maintainability and performance.</p>
+
+                    <h3 style="margin-bottom: 1rem; margin-top: 2rem; color: var(--accent-color);"
+                        data-i18n="what_i_do">What I Do</h3>
+                    <ul style="line-height: 2; color: var(--text-secondary); list-style: none; padding: 0;">
+                        <li><i class="fas fa-check-circle"
+                                style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                                data-i18n="service_1">Cross-platform mobile app development</span></li>
+                        <li><i class="fas fa-check-circle"
+                                style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                                data-i18n="service_2">Responsive web design & development</span></li>
+                        <li><i class="fas fa-check-circle"
+                                style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                                data-i18n="service_3">UI/UX design and prototyping</span></li>
+                        <li><i class="fas fa-check-circle"
+                                style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                                data-i18n="service_4">Firebase integration & backend</span></li>
+                        <li><i class="fas fa-check-circle"
+                                style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                                data-i18n="service_5">Logo design & visual identity</span></li>
+                    </ul>
+
+                    <button id="cv-download-btn" class="btn ripple" onclick="openCVModal()"
+                        style="margin-top: 2rem; display: inline-block; border: none; cursor: pointer;"
+                        data-i18n="download_cv">Download CV</button>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="skills">Skills</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                        <span class="tag skill-icon">Flutter</span><span class="tag skill-icon">Dart</span><span
+                            class="tag skill-icon">HTML5</span><span class="tag skill-icon">CSS3</span><span
+                            class="tag skill-icon">JavaScript</span><span class="tag skill-icon">Firebase</span><span
+                            class="tag skill-icon">REST API</span><span class="tag skill-icon">UI/UX Design</span><span
+                            class="tag skill-icon">Photoshop</span>
+                    </div>
+
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="specializations">
+                        Specializations</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span data-i18n="spec_mobile">Mobile Development</span>
+                                <span style="color: var(--accent-color);">95%</span>
+                            </div>
+                            <div
+                                style="background: var(--glass-bg); height: 8px; border-radius: 10px; overflow: hidden;">
+                                <div
+                                    style="width: 95%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--accent-glow)); border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span data-i18n="spec_web">Web Development</span>
+                                <span style="color: var(--accent-color);">90%</span>
+                            </div>
+                            <div
+                                style="background: var(--glass-bg); height: 8px; border-radius: 10px; overflow: hidden;">
+                                <div
+                                    style="width: 90%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--accent-glow)); border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span data-i18n="spec_uiux">UI/UX Design</span>
+                                <span style="color: var(--accent-color);">85%</span>
+                            </div>
+                            <div
+                                style="background: var(--glass-bg); height: 8px; border-radius: 10px; overflow: hidden;">
+                                <div
+                                    style="width: 85%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--accent-glow)); border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span data-i18n="spec_backend">Backend & APIs</span>
+                                <span style="color: var(--accent-color);">80%</span>
+                            </div>
+                            <div
+                                style="background: var(--glass-bg); height: 8px; border-radius: 10px; overflow: hidden;">
+                                <div
+                                    style="width: 80%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--accent-glow)); border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="section-title fade-in-up" style="margin-top: 3rem;" data-i18n="experience">Experience</h3>
+            <div class="timeline fade-in-up">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass">
+                        <span class="date">2020 - Present</span>
+                        <h4 data-i18n="job_title_1">Flutter & Web Developer</h4>
+                        <p data-i18n="job_desc_1">Building cross-platform mobile apps and professional responsive
+                            websites with modern technologies and best practices.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass">
+                        <span class="date">4 Years Experience</span>
+                        <h4 data-i18n="job_title_2">Full-Stack Solutions</h4>
+                        <p data-i18n="job_desc_2">Developed management systems, accounting apps, real estate platforms,
+                            construction management tools, and chat applications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass">
+                        <span class="date">Additional Skills</span>
+                        <h4 data-i18n="job_title_3">Design & Multimedia</h4>
+                        <p data-i18n="job_desc_3">Visual identity creation, logo design, Photoshop editing, and video
+                            production for comprehensive branding solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="services_title">My Services</h2>
+            <div class="services-grid fade-in-up"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+
+                <!-- Mobile App Development -->
+                <div class="glass"
+                    style="padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);" data-i18n="service_mobile_title">Mobile
+                        App Development</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="service_mobile_desc">
+                        Professional Flutter apps for Android & iOS with modern design and high performance</p>
+                </div>
+
+                <!-- Web Development -->
+                <div class="glass"
+                    style="padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);" data-i18n="service_web_title">Web
+                        Development</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="service_web_desc">Professional
+                        responsive websites using latest technologies</p>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="glass"
+                    style="padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);" data-i18n="service_design_title">UI/UX
+                        Design</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="service_design_desc">
+                        Professional designs with excellent user experience</p>
+                </div>
+
+                <!-- Logo & Branding -->
+                <div class="glass"
+                    style="padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);" data-i18n="service_branding_title">Logo
+                        & Branding</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="service_branding_desc">
+                        Professional logos and visual identity for your brand</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="portfolio_title">My Projects</h2>
+            <div class="portfolio-controls fade-in-up"
+                style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <input type="text" id="search-input" class="form-input" style="max-width: 300px;"
+                    data-i18n-placeholder="search_placeholder" placeholder="Search projects...">
+                <div class="filter-group" style="display: flex; gap: 0.5rem;">
+                    <button class="btn filter-btn active ripple" data-filter="all" data-i18n="all">All</button>
+                    <button class="btn filter-btn ripple"
+                        style="background: transparent; color: var(--text-primary); border: 1px solid var(--glass-border);"
+                        data-filter="mobile" data-i18n="mobile">Mobile App</button>
+                    <button class="btn filter-btn ripple"
+                        style="background: transparent; color: var(--text-primary); border: 1px solid var(--glass-border);"
+                        data-filter="web" data-i18n="web">Website</button>
+                </div>
+            </div>
+            <div id="portfolio-grid" class="portfolio-grid"></div>
+            <div id="pagination-container" class="pagination-container"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="contact_title">Get In Touch</h2>
+            <div class="glass fade-in-up"
+                style="max-width: 600px; margin: 0 auto 2rem auto; padding: 1.5rem; text-align: center;">
+                <h3 style="margin-bottom: 1rem;" data-i18n="contact_info">Contact Information</h3>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope"
+                        style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                        data-i18n="email_address">bnbmwmrnrnmb@gmail.com</span></p>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone"
+                        style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
+                        data-i18n="phone_number">07728306149 / 07864427149</span></p>
+                <p><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 0.5rem;"></i><a
+                        href="https://wa.me/9647728306149" target="_blank"
+                        style="color: #25D366; text-decoration: none;">WhatsApp: 07728306149</a></p>
+            </div>
+            <div class="glass fade-in-up" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+                <form id="contact-form">
+                    <div class="form-group"><label class="form-label" data-i18n="name">Name</label><input type="text"
+                            id="contact-name" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label" data-i18n="email">Email</label><input type="email"
+                            id="contact-email" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label" data-i18n="message">Message</label><textarea
+                            id="contact-message" class="form-textarea" rows="4" required></textarea></div>
+                    <button type="submit" class="btn ripple" style="width: 100%;" data-i18n="send">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">&times;</button>
+            <div id="modal-body"></div>
+            <div id="project-reviews" class="reviews-section"></div>
+        </div>
+    </div>
+
+    <!-- CV Selection Modal -->
+    <div id="cv-modal" class="modal" style="display: none; align-items: center; justify-content: center;">
+        <div class="modal-content" style="max-width: 350px; text-align: center; padding: 2.5rem; border-radius: 20px;">
+            <button onclick="closeCVModal()" class="modal-close"
+                style="position: absolute; top: 1rem; right: 1rem;">&times;</button>
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;" data-i18n="select_cv_lang">اختر لغة السيرة الذاتية</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="cv-ar.html" target="_blank" class="btn ripple cv-btn" onclick="closeCVModal()"
+                    style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; color: white; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
+                    <i class="fas fa-file-alt"></i> عربي
+                </a>
+                <a href="cv-en.html" target="_blank" class="btn ripple cv-btn" onclick="closeCVModal()"
+                    style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; color: white; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
+                    <i class="fas fa-file-alt"></i> English
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer
+        style="text-align: center; padding: 3rem 2rem; color: var(--text-secondary); background: var(--glass-bg); backdrop-filter: blur(10px);">
+        <!-- Social Media Links -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);" data-i18n="follow_me">Follow Me</h3>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/Abd1997UIl" target="_blank" rel="noopener" class="social-link"
+                    title="GitHub">
+                    <i class="fab fa-github" style="font-size: 1.8rem;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/abdullah-salam-33b36913b/" target="_blank" rel="noopener"
+                    class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin" style="font-size: 1.8rem;"></i>
+                </a>
+                <a href="https://wa.me/9647728306149" target="_blank" rel="noopener" class="social-link"
+                    title="WhatsApp">
+                    <i class="fab fa-whatsapp" style="font-size: 1.8rem;"></i>
+                </a>
+                <a href="https://www.facebook.com/share/17Wq1ZUToi/" target="_blank" rel="noopener" class="social-link"
+                    title="Facebook">
+                    <i class="fab fa-facebook" style="font-size: 1.8rem;"></i>
+                </a>
+                <a href="https://www.instagram.com/a_1997_u/" target="_blank" rel="noopener" class="social-link"
+                    title="Instagram">
+                    <i class="fab fa-instagram" style="font-size: 1.8rem;"></i>
+                </a>
+                <a href="mailto:bnbmwmrnrnmb@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope" style="font-size: 1.8rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <p data-i18n="footer">© 2024 Abdullah Salam. All rights reserved.</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem;">
+            <a href="privacy-policy.html" data-i18n="privacy_policy"
+                style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+            <a href="terms-of-service.html" data-i18n="terms_service"
+                style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+        </div>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Made with ❤️ using HTML, CSS & JavaScript</p>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/pwa.js"></script>
+    <script src="js/lang.js?v=2"></script>
+    <script type="module" src="js/reviews.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="js/schema-markup.js"></script>
+    <script type="module" src="js/main.v2.js?v=3"></script>
+    <script>
+        // CV Modal Functions - Must be global and work without modules
+        function openCVModal() {
+            const cvModal = document.getElementById('cv-modal');
+            if (cvModal) {
+                cvModal.style.display = 'flex';
+                setTimeout(() => {
+                    cvModal.classList.add('active');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error('CV Modal not found!');
+            }
+        }
+
+        function closeCVModal() {
+            const cvModal = document.getElementById('cv-modal');
+            if (cvModal) {
+                cvModal.classList.remove('active');
+                setTimeout(() => {
+                    cvModal.style.display = 'none';
+                }, 300);
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function () {
+            const cvModal = document.getElementById('cv-modal');
+            if (cvModal) {
+                cvModal.addEventListener('click', function (e) {
+                    if (e.target === cvModal) {
+                        closeCVModal();
+                    }
+                });
+            }
+        });
+
+        // Failsafe: Ensure content is visible even if JS fails
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+                    if (getComputedStyle(el).opacity === '0') {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        console.warn('Failsafe triggered: Forced content visibility');
+                    }
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>
