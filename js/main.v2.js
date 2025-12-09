@@ -1,3 +1,4 @@
+/* global translations, emailjs, toast */
 import { db } from './firebase-config.js';
 import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -258,7 +259,7 @@ function searchProjects(query) {
 }
 
 // Upload Logic
-function handleUpload(e) {
+window.handleUpload = function (e) {
     e.preventDefault();
 
     const titleValue = document.getElementById('p-title').value;
@@ -284,9 +285,9 @@ function handleUpload(e) {
     projects.unshift(newProject);
     try {
         localStorage.setItem('projects', JSON.stringify(projects));
-    } catch (e) { console.warn('LocalStorage write failed:', e); }
+    } catch (err) { console.warn('LocalStorage write failed:', err); }
     renderProjects(projects);
-    uploadForm.reset();
+    e.target.reset();
     alert('Project uploaded successfully!');
 }
 
@@ -297,7 +298,7 @@ function showProjectDetails(id) {
 
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = `
-                < div style = "display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;" >
+        <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
             <img src="${project.image}" alt="${getLocalizedText(project.title)}" style="flex: 1; max-width: 60%; border-radius: var(--radius-md); object-fit: cover;">
             <button onclick="closeModal()" style="background: var(--accent-color); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; flex-shrink: 0; transition: var(--transition-fast);" onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='rotate(0deg)'">&times;</button>
         </div>
@@ -543,6 +544,7 @@ function setupEventListeners() {
                             currentLang === 'ar' ? 'نجح الإرسال!' : 'Success!',
                             currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح! شكراً لتواصلك.' : 'Message sent successfully! Thank you for contacting me.'
                         );
+                        if (window.triggerConfetti) window.triggerConfetti();
                     }
                     contactForm.reset();
                 }, function (error) {

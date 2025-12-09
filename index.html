@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="css/toast.css">
     <link rel="stylesheet" href="css/reviews.css">
     <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/sections.css">
 </head>
 
 <body>
@@ -137,29 +138,33 @@
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
                 <div class="glass" style="padding: 2rem; text-align: center;">
                     <div
+                        class="stat-number" data-target="4"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
-                        4+</div>
+                        0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_years">Years Experience
                     </p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
                     <div
+                        class="stat-number" data-target="20"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
-                        20+</div>
+                        0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_projects">Completed
                         Projects</p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
                     <div
+                        class="stat-number" data-target="100"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
-                        100%</div>
+                        0%</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_satisfaction">Client
                         Satisfaction</p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
                     <div
+                        class="stat-number" data-target="9"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
-                        9+</div>
+                        0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_technologies">
                         Technologies</p>
                 </div>
@@ -295,6 +300,107 @@
                         <p data-i18n="job_desc_3">Visual identity creation, logo design, Photoshop editing, and video
                             production for comprehensive branding solutions.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="testimonials_title">What Clients Say</h2>
+            
+            <div class="testimonials-carousel fade-in-up">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card active">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"عبد الله مطور محترف جداً. بنا لي تطبيق فلاتر كامل متعدد المنصات بجودة عالية ووقت قياسي!"</p>
+                    <h4 class="testimonial-author">أحمد محمد</h4>
+                    <p class="testimonial-position">مدير شركة تقنية</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excellent work! Abdullah developed our real estate platform with clean code and beautiful UI. Highly recommended!"</p>
+                    <h4 class="testimonial-author">Sarah Johnson</h4>
+                    <p class="testimonial-position">Real Estate Manager</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"موقع احترافي بتصميم رائع. عبد الله فهم المطلوب بسرعة ونفذ بدقة عالية!"</p>
+                    <h4 class="testimonial-author">خالد العلي</h4>
+                    <p class="testimonial-position">صاحب مشروع</p>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title fade-in-up" data-i18n="certificates_title">Certificates & Achievements</h2>
+            
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card fade-in-up">
+                    <div class="certificate-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="certificate-title">Flutter Development</h3>
+                    <p class="certificate-issuer">Udemy</p>
+                    <p class="certificate-date">2021</p>
+                    <span class="certificate-badge">Verified</span>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card fade-in-up">
+                    <div class="certificate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="certificate-title">Web Development</h3>
+                    <p class="certificate-issuer">freeCodeCamp</p>
+                    <p class="certificate-date">2020</p>
+                    <span class="certificate-badge">Certified</span>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card fade-in-up">
+                    <div class="certificate-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="certificate-title">UI/UX Design</h3>
+                    <p class="certificate-issuer">Coursera</p>
+                    <p class="certificate-date">2022</p>
+                    <span class="certificate-badge">Completed</span>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card fade-in-up">
+                    <div class="certificate-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="certificate-title">Firebase Integration</h3>
+                    <p class="certificate-issuer">Google</p>
+                    <p class="certificate-date">2023</p>
+                    <span class="certificate-badge">Professional</span>
                 </div>
             </div>
         </div>
@@ -484,6 +590,8 @@
     <script src="js/toast.js"></script>
     <script src="js/lazy-loading.js"></script>
     <script src="js/pwa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/features.js"></script>
     <script src="js/lang.js?v=2"></script>
     <script type="module" src="js/reviews.js"></script>
     <script src="js/pagination.js"></script>

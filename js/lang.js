@@ -85,7 +85,9 @@ const translations = {
         service_design_title: "UI/UX Design",
         service_design_desc: "Professional designs with excellent user experience",
         service_branding_title: "Logo & Branding",
-        service_branding_desc: "Professional logos and visual identity for your brand"
+        service_branding_desc: "Professional logos and visual identity for your brand",
+        testimonials_title: "What Clients Say",
+        certificates_title: "Certificates & Achievements"
     },
     ar: {
         home: "الرئيسية",
@@ -173,7 +175,9 @@ const translations = {
         service_design_title: "تصميم واجهات المستخدم",
         service_design_desc: "تصاميم احترافية توفر تجربة مستخدم مميزة",
         service_branding_title: "الشعارات والهوية البصرية",
-        service_branding_desc: "شعارات احترافية وهوية بصرية مميزة لعلامتك التجارية"
+        service_branding_desc: "شعارات احترافية وهوية بصرية مميزة لعلامتك التجارية",
+        testimonials_title: "آراء العملاء",
+        certificates_title: "الشهادات والإنجازات"
     }
 };
 
