@@ -195,7 +195,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Abdullah Salam**
 
 - 📧 Email: bnbmwmrnrnmb@gmail.com
-- 📱 Phone: 07728306149 / 07864427149
+- 📱 Phone: 07728306149 / 07882930896
 - 💼 GitHub: [@abdullahsalam](https://github.com/abdullahsalam)
 - 🔗 LinkedIn: [Abdullah Salam](https://linkedin.com/in/abdullahsalam)
 

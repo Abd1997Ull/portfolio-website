@@ -77,6 +77,19 @@ async function fetchProjects() {
 
         console.log("Projects fetched:", projects);
         renderProjects(projects);
+
+        // Update Project Count Statistic
+        updateStatCounter('stat-projects', projects.length);
+
+        // Calculate and update unique technologies count
+        const uniqueTechs = new Set(['Flutter', 'HTML', 'CSS', 'JavaScript', 'Dart', 'Firebase']);
+        projects.forEach(p => {
+            if (Array.isArray(p.tech)) {
+                p.tech.forEach(t => uniqueTechs.add(t));
+            }
+        });
+        updateStatCounter('stat-tech', uniqueTechs.size);
+
     } catch (error) {
         console.error("Error fetching projects:", error);
         if (portfolioGrid) {
@@ -89,6 +102,85 @@ async function fetchProjects() {
                 translations[currentLang]['projects_load_error'] || 'Failed to load projects'
             );
         }
+    }
+}
+
+// Fetch Testimonials from Firebase
+async function fetchTestimonials() {
+    const testimonialsContainer = document.querySelector('.testimonials-carousel');
+    if (!testimonialsContainer) return;
+
+    try {
+        const q = query(collection(db, "testimonials"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(q);
+
+        const testimonials = [];
+        querySnapshot.forEach((doc) => {
+            testimonials.push({ id: doc.id, ...doc.data() });
+        });
+
+        if (testimonials.length > 0) {
+            renderTestimonials(testimonials);
+            // Update Client Satisfaction (can be based on average rating or just 100% for now)
+            updateStatCounter('stat-satisfaction', 100);
+        } else {
+            // Fallback or empty state handled by initial HTML
+            console.log("No testimonials found, using defaults or hidden.");
+        }
+
+    } catch (error) {
+        console.error("Error fetching testimonials:", error);
+    }
+}
+
+function renderTestimonials(items) {
+    const container = document.querySelector('.testimonials-carousel');
+    if (!container) return;
+
+    // Keep controls and indicators structure, just replace cards
+    // Simplified for now: Re-generating the whole inner HTML logic could be tricky with existing classes.
+    // Better approach: Generate cards HTML and append, then re-init carousel.
+
+    const cardsHtml = items.map((t, index) => `
+        <div class="testimonial-card ${index === 0 ? 'active' : ''}">
+            <div class="testimonial-stars">${'★'.repeat(t.rating || 5)}</div>
+            <p class="testimonial-text">"${getLocalizedText(t.text)}"</p>
+            <h4 class="testimonial-author">${getLocalizedText(t.author)}</h4>
+            <p class="testimonial-position">${getLocalizedText(t.position)}</p>
+        </div>
+    `).join('');
+
+    const controlsHtml = `
+        <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="carousel-indicators">
+            ${items.map((_, i) => `<span class="indicator ${i === 0 ? 'active' : ''}"></span>`).join('')}
+        </div>
+    `;
+
+    container.innerHTML = cardsHtml + controlsHtml;
+
+    // Re-initialize carousel logic
+    if (window.TestimonialsCarousel) {
+        new window.TestimonialsCarousel();
+    } else {
+        // Import dynamically if needed or rely on global class
+        // Assuming features.js exposes it globally or we need to re-run its init
+        // For now, let's assume features.js logic needs a manual re-trigger or we instantiate the class directly if available
+        import('./features.js').then(module => {
+            new module.TestimonialsCarousel();
+        });
+    }
+}
+
+function updateStatCounter(id, value) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.setAttribute('data-target', value);
+        // If AnimatedCounter is available globally or we can re-trigger observer
+        el.textContent = value; // Direct update for simplicity, observer will animate if not viewed yet
     }
 }
 
@@ -113,6 +205,8 @@ function init() {
         setLanguage(currentLang);
         console.log('Fetching projects from Firebase...');
         fetchProjects();
+        console.log('Fetching testimonials...');
+        fetchTestimonials();
         console.log('Setting up event listeners...');
         setupEventListeners();
         console.log('Initializing animations...');

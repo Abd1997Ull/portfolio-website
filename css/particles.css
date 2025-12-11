@@ -1,0 +1,224 @@
+/* Particles Background Animation */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: floatParticle 15s infinite ease-in-out;
+}
+
+.particle:nth-child(odd) {
+    background: var(--accent-secondary);
+    width: 4px;
+    height: 4px;
+}
+
+.particle:nth-child(3n) {
+    background: var(--accent-tertiary);
+    width: 8px;
+    height: 8px;
+    opacity: 0.3;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.4;
+    }
+
+    25% {
+        transform: translateY(-100px) translateX(50px) scale(1.2);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-200px) translateX(-30px) scale(0.8);
+        opacity: 0.3;
+    }
+
+    75% {
+        transform: translateY(-150px) translateX(70px) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* Glowing effect for particles */
+.particle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+/* Animated Service Icons */
+.service-icon-animated {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.service-icon-animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.service-icon-animated i {
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effects */
+.service-card:hover .service-icon-animated {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+.service-card:hover .service-icon-animated i {
+    transform: scale(1.2);
+    animation: iconPulse 0.6s ease-in-out;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+/* Floating animation for icons */
+.service-icon-animated.floating {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Ring effect around icons */
+.service-icon-animated::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon-animated::after {
+    opacity: 0.5;
+    transform: scale(1);
+    animation: ringPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.2;
+        transform: scale(1.1);
+    }
+}
+
+/* Service Card Styles */
+.service-card {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient border on hover */
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--accent-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}

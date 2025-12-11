@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="css/reviews.css">
     <link rel="stylesheet" href="css/pagination.css">
     <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/particles.css">
 </head>
 
 <body>
@@ -133,36 +134,38 @@
         <div class="container">
             <h2 class="section-title fade-in-up" data-i18n="about_title">About Me</h2>
 
+            <!-- Profile Image -->
+            <div class="fade-in-up" style="text-align: center; margin-bottom: 2rem;">
+                <img src="assets/profile.webp" alt="Abdullah Salam"
+                    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-color); box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);">
+            </div>
+
             <!-- Statistics Section -->
             <div class="stats-grid fade-in-up"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
                 <div class="glass" style="padding: 2rem; text-align: center;">
-                    <div
-                        class="stat-number" data-target="4"
+                    <div id="stat-years" class="stat-number" data-target="4"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
                         0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_years">Years Experience
                     </p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
-                    <div
-                        class="stat-number" data-target="20"
+                    <div id="stat-projects" class="stat-number" data-target="0"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
                         0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_projects">Completed
                         Projects</p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
-                    <div
-                        class="stat-number" data-target="100"
+                    <div id="stat-satisfaction" class="stat-number" data-target="100"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
                         0%</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_satisfaction">Client
                         Satisfaction</p>
                 </div>
                 <div class="glass" style="padding: 2rem; text-align: center;">
-                    <div
-                        class="stat-number" data-target="9"
+                    <div id="stat-tech" class="stat-number" data-target="4"
                         style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">
                         0</div>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="stat_technologies">
@@ -211,11 +214,12 @@
                 <div style="flex: 1; min-width: 300px;">
                     <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="skills">Skills</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
-                        <span class="tag skill-icon">Flutter</span><span class="tag skill-icon">Dart</span><span
-                            class="tag skill-icon">HTML5</span><span class="tag skill-icon">CSS3</span><span
-                            class="tag skill-icon">JavaScript</span><span class="tag skill-icon">Firebase</span><span
-                            class="tag skill-icon">REST API</span><span class="tag skill-icon">UI/UX Design</span><span
-                            class="tag skill-icon">Photoshop</span>
+                        <span class="tag skill-icon">Flutter</span>
+                        <span class="tag skill-icon">HTML</span>
+                        <span class="tag skill-icon">CSS</span>
+                        <span class="tag skill-icon">JavaScript</span>
+                        <span class="tag skill-icon">Dart</span>
+                        <span class="tag skill-icon">Firebase</span>
                     </div>
 
                     <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="specializations">
@@ -305,106 +309,10 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title fade-in-up" data-i18n="testimonials_title">What Clients Say</h2>
-            
-            <div class="testimonials-carousel fade-in-up">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card active">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"عبد الله مطور محترف جداً. بنا لي تطبيق فلاتر كامل متعدد المنصات بجودة عالية ووقت قياسي!"</p>
-                    <h4 class="testimonial-author">أحمد محمد</h4>
-                    <p class="testimonial-position">مدير شركة تقنية</p>
-                </div>
+    <!-- Testimonials Section - Coming Soon -->
+    <!-- يمكن إضافة آراء العملاء لاحقاً عند توفرها -->
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Excellent work! Abdullah developed our real estate platform with clean code and beautiful UI. Highly recommended!"</p>
-                    <h4 class="testimonial-author">Sarah Johnson</h4>
-                    <p class="testimonial-position">Real Estate Manager</p>
-                </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"موقع احترافي بتصميم رائع. عبد الله فهم المطلوب بسرعة ونفذ بدقة عالية!"</p>
-                    <h4 class="testimonial-author">خالد العلي</h4>
-                    <p class="testimonial-position">صاحب مشروع</p>
-                </div>
-
-                <div class="carousel-controls">
-                    <button class="carousel-btn carousel-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn carousel-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <div class="carousel-indicators">
-                    <span class="indicator active"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="certificates">
-        <div class="container">
-            <h2 class="section-title fade-in-up" data-i18n="certificates_title">Certificates & Achievements</h2>
-            
-            <div class="certificates-grid">
-                <!-- Certificate 1 -->
-                <div class="certificate-card fade-in-up">
-                    <div class="certificate-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3 class="certificate-title">Flutter Development</h3>
-                    <p class="certificate-issuer">Udemy</p>
-                    <p class="certificate-date">2021</p>
-                    <span class="certificate-badge">Verified</span>
-                </div>
-
-                <!-- Certificate 2 -->
-                <div class="certificate-card fade-in-up">
-                    <div class="certificate-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3 class="certificate-title">Web Development</h3>
-                    <p class="certificate-issuer">freeCodeCamp</p>
-                    <p class="certificate-date">2020</p>
-                    <span class="certificate-badge">Certified</span>
-                </div>
-
-                <!-- Certificate 3 -->
-                <div class="certificate-card fade-in-up">
-                    <div class="certificate-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="certificate-title">UI/UX Design</h3>
-                    <p class="certificate-issuer">Coursera</p>
-                    <p class="certificate-date">2022</p>
-                    <span class="certificate-badge">Completed</span>
-                </div>
-
-                <!-- Certificate 4 -->
-                <div class="certificate-card fade-in-up">
-                    <div class="certificate-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="certificate-title">Firebase Integration</h3>
-                    <p class="certificate-issuer">Google</p>
-                    <p class="certificate-date">2023</p>
-                    <span class="certificate-badge">Professional</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Services Section -->
     <section id="services">
@@ -500,10 +408,13 @@
                         data-i18n="email_address">bnbmwmrnrnmb@gmail.com</span></p>
                 <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone"
                         style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
-                        data-i18n="phone_number">07728306149 / 07864427149</span></p>
+                        data-i18n="phone_number">07728306149 / 07882930896</span></p>
+                <p style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp"
+                        style="color: #25D366; margin-right: 0.5rem;"></i><a href="https://wa.me/9647728306149"
+                        target="_blank" style="color: #25D366; text-decoration: none;">WhatsApp: 07728306149</a></p>
                 <p><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 0.5rem;"></i><a
-                        href="https://wa.me/9647728306149" target="_blank"
-                        style="color: #25D366; text-decoration: none;">WhatsApp: 07728306149</a></p>
+                        href="https://wa.me/9647882930896" target="_blank"
+                        style="color: #25D366; text-decoration: none;">WhatsApp: 07882930896</a></p>
             </div>
             <div class="glass fade-in-up" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
                 <form id="contact-form">
@@ -597,6 +508,7 @@
     <script src="js/pagination.js"></script>
     <script src="js/schema-markup.js"></script>
     <script type="module" src="js/main.v2.js?v=3"></script>
+    <script src="js/particles.js"></script>
     <script>
         // CV Modal Functions - Must be global and work without modules
         function openCVModal() {
