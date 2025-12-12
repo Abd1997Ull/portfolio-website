@@ -9,8 +9,8 @@ function generatePersonSchema() {
         "alternateName": "AbdullahStudio",
         "jobTitle": "Flutter & Web Developer",
         "description": "Professional Flutter and Web Developer with 4 years of experience in building modern digital solutions",
-        "url": "https://lovely-druid-cdd494.netlify.app/",
-        "image": "https://lovely-druid-cdd494.netlify.app/favicon.png",
+        "url": "https://abdullahstudio.netlify.app/",
+        "image": "https://abdullahstudio.netlify.app/favicon.png",
         "email": "bnbmwmrnrnmb@gmail.com",
         "telephone": "+964-772-8306149",
         "address": {
@@ -42,10 +42,10 @@ function generateWebSiteSchema() {
         "@type": "WebSite",
         "name": "AbdullahStudio - Portfolio",
         "description": "Professional Flutter and Web Developer Portfolio showcasing mobile apps and responsive websites",
-        "url": "https://lovely-druid-cdd494.netlify.app/",
+        "url": "https://abdullahstudio.netlify.app/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://lovely-druid-cdd494.netlify.app/#portfolio?search={search_term_string}",
+            "target": "https://abdullahstudio.netlify.app/#portfolio?search={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     };
@@ -113,8 +113,8 @@ function generateOrganizationSchema() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "AbdullahStudio",
-        "url": "https://lovely-druid-cdd494.netlify.app/",
-        "logo": "https://lovely-druid-cdd494.netlify.app/favicon.png",
+        "url": "https://abdullahstudio.netlify.app/",
+        "logo": "https://abdullahstudio.netlify.app/favicon.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+964-772-8306149",
@@ -163,3 +163,4 @@ if (typeof window !== 'undefined') {
     window.generateReviewSchema = generateReviewSchema;
     window.injectSchema = injectSchema;
 }
+
