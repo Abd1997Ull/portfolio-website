@@ -1,327 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السيرة الذاتية - عبدالله سلام</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .cv-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            text-align: center;
-            border-bottom: 3px solid #3182ce;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            color: #1a202c;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .header h2 {
-            color: #3182ce;
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .contact-info span {
-            color: #4a5568;
-            font-size: 0.9rem;
-        }
-
-        .contact-info i {
-            color: #3182ce;
-            margin-left: 5px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            color: #1a202c;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #3182ce;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .about-text {
-            color: #4a5568;
-            text-align: justify;
-            line-height: 1.8;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-item {
-            background: #f7fafc;
-            padding: 10px 15px;
-            border-right: 3px solid #3182ce;
-            color: #1a202c;
-        }
-
-        .experience-item {
-            margin-bottom: 25px;
-            padding: 15px;
-            background: #f7fafc;
-            border-right: 4px solid #3182ce;
-        }
-
-        .experience-item h3 {
-            color: #1a202c;
-            margin-bottom: 5px;
-        }
-
-        .experience-item .date {
-            color: #3182ce;
-            font-weight: 600;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .experience-item p {
-            color: #4a5568;
-        }
-
-        .projects-grid {
-            display: grid;
-            gap: 15px;
-        }
-
-        .project-item {
-            padding: 15px;
-            background: #f7fafc;
-            border-right: 4px solid #63b3ed;
-        }
-
-        .project-item h3 {
-            color: #1a202c;
-            margin-bottom: 8px;
-        }
-
-        .project-item .tech {
-            color: #3182ce;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .project-item p {
-            color: #4a5568;
-            font-size: 0.95rem;
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .cv-container {
-                box-shadow: none;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .cv-container {
-                padding: 20px;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="cv-container">
-        <!-- Header -->
-        <div class="header">
-            <h1>عبدالله سلام</h1>
-            <h2>مطور تطبيقات Flutter ومطوّر ويب (HTML/CSS/JavaScript)</h2>
-            <div class="contact-info">
-                <span>📧 bnbmwmrnrnmb@gmail.com</span>
-                <span>📱 07728306149 / 07882930896</span>
-                <span>🌐 اللغة: العربية (إجادة تامة)، الإنجليزية (متوسطة)</span>
-            </div>
-        </div>
-
-        <!-- About -->
-        <div class="section">
-            <h2 class="section-title">📋 نبذة عني</h2>
-            <p class="about-text">
-                أنا عبدالله، مطوّر تطبيقات ومواقع بخبرة 4 سنوات في تصميم وتطوير حلول رقمية حديثة باستخدام Flutter لبناء
-                التطبيقات المتعددة المنصّات،
-                وباستخدام HTML/CSS/JavaScript لبناء مواقع ويب احترافية ومتجاوبة. أركز على بناء واجهات سلسة، سريعة،
-                وأنميشن تفاعلي جميل،
-                مع كتابة أكواد نظيفة ومنظمة وقابلة للتطوير.
-            </p>
-        </div>
-
-        <!-- Skills -->
-        <div class="section">
-            <h2 class="section-title">🧩 المهارات الأساسية</h2>
-            <div class="skills-grid">
-                <div class="skill-item">✅ تطوير تطبيقات Flutter (Android & iOS)</div>
-                <div class="skill-item">✅ تطوير واجهات ويب HTML/CSS/JavaScript</div>
-                <div class="skill-item">✅ تصميم واجهات احترافية UI/UX</div>
-                <div class="skill-item">✅ بناء لوحات تحكم Dashboard</div>
-                <div class="skill-item">✅ التعامل مع REST API</div>
-                <div class="skill-item">✅ العمل على Firebase (Auth – Database – Storage)</div>
-                <div class="skill-item">✅ حل مشاكل النظام وصيانة الأخطاء</div>
-                <div class="skill-item">✅ استخدام تطبيقات Office</div>
-                <div class="skill-item">✅ فوتوشوب ومونتاج</div>
-                <div class="skill-item">✅ إدارة المشاريع</div>
-            </div>
-        </div>
-
-        <!-- Experience -->
-        <div class="section">
-            <h2 class="section-title">💼 الخبرات العملية</h2>
-
-            <div class="experience-item">
-                <h3>مطور تطبيقات Flutter ومطور ويب</h3>
-                <span class="date">2020 - الآن | 4 سنوات خبرة</span>
-                <p>
-                    • تطوير تطبيقات Flutter كاملة من الصفر (تصميم – برمجة – ربط قاعدة البيانات – اختبار – نشر)<br>
-                    • برمجة مواقع ويب احترافية HTML/CSS/JS<br>
-                    • بناء صفحات هبوط Landing Pages<br>
-                    • تصميم أنظمة محاسبية وإدارية صغيرة<br>
-                    • تطوير أنظمة تسجيل دخول، تفعيل مشتركين، وإدارة مستخدمين
-                </p>
-            </div>
-
-            <div class="experience-item">
-                <h3>مصمم جرافيك ومونتاج</h3>
-                <span class="date">خبرة إضافية</span>
-                <p>
-                    • تصميم هويات بصرية بسيطة وشعارات تطبيقات<br>
-                    • العمل على Photoshop<br>
-                    • مونتاج فيديوهات بسيطة
-                </p>
-            </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="section">
-            <h2 class="section-title">📱 المشاريع البارزة</h2>
-
-            <div class="projects-grid">
-                <div class="project-item">
-                    <h3>1. نظام إدارة مشتركين إنترنت – Flutter</h3>
-                    <div class="tech">التقنيات: Flutter, Firebase, Dart, CRUD</div>
-                    <p>
-                        نظام متكامل للتفعيل، تسديد الديون، وإدارة المستخدمين. ربط Firebase وعمليات CRUD. تصميم واجهة
-                        بسيطة وسريعة.
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>2. تطبيق مقاولات – Flutter</h3>
-                    <div class="tech">التقنيات: Flutter, Firebase, Image Upload, Admin Panel</div>
-                    <p>
-                        تسجيل مقاول/عامل، إضافة مشاريع، رفع صور، تسجيل مواد، لوحة تحكم للمدير.
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>3. موقع عقارات – HTML/CSS/JS</h3>
-                    <div class="tech">التقنيات: HTML5, CSS3, JavaScript, Responsive Design</div>
-                    <p>
-                        موقع عقارات احترافي مع فلاتر بحث، عرض عقارات بشكل محترف، وصفحة تفاصيل ديناميكية.
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>مشاريع إضافية</h3>
-                    <div class="tech">أنواع مختلفة</div>
-                    <p>
-                        تطبيقات حضور/انصراف، ربط بيانات، دردشة، أنظمة محاسبية، تطبيقات عقارات، وغيرها.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Education -->
-        <div class="section">
-            <h2 class="section-title">🎓 التعليم</h2>
-            <div class="experience-item">
-                <h3>التحصيل الدراسي</h3>
-                <span class="date">ثالث متوسط</span>
-            </div>
-        </div>
-
-        <!-- Goals -->
-        <div class="section">
-            <h2 class="section-title">🎯 أهدافي المهنية</h2>
-            <p class="about-text">
-                أسعى لتطوير خبرتي في بناء تطبيقات متقدمة عالية الأداء، وتوسيع خبرتي في تطوير الويب والأنظمة الذكية،
-                والعمل على مشاريع توفر تجربة مستخدم راقية ومبسّطة.
-            </p>
-        </div>
-
-        <!-- Work Values -->
-        <div class="section">
-            <h2 class="section-title">⭐ قيم العمل</h2>
-            <div class="skills-grid">
-                <div class="skill-item">⚡ الدقة</div>
-                <div class="skill-item">📅 الالتزام</div>
-                <div class="skill-item">🚀 السرعة</div>
-                <div class="skill-item">💎 الاحتراف</div>
-                <div class="skill-item">📝 كتابة كود نظيف</div>
-                <div class="skill-item">🔄 قابل للتطوير</div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Optional: Auto-print on load
-        // window.onload = function() { window.print(); }
-    </script>
-</body>
-
-</html>
