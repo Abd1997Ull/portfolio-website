@@ -538,13 +538,18 @@
     right: 0;
     width: 350px;
     height: 450px;
-    background: var(--card-bg);
+    background: #1a1a2e;
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     display: none;
     flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--glass-border);
+}
+
+[data-theme="light"] .chat-window {
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .chat-window.active {
@@ -557,6 +562,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

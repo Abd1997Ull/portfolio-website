@@ -380,12 +380,17 @@ section {
         right: -100%;
         width: 250px;
         height: calc(100vh - 70px);
-        background: var(--glass-bg);
-        backdrop-filter: var(--glass-blur);
+        background: var(--bg-solid, #1a1a2e);
+        backdrop-filter: none;
         border-left: 1px solid var(--glass-border);
         flex-direction: column;
         padding: var(--spacing-md);
         transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    [data-theme="light"] .nav-links {
+        background: #ffffff;
     }
 
     .nav-links.active {
