@@ -397,6 +397,16 @@ section {
         right: 0;
     }
 
+    .nav-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links .nav-link {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
     .hamburger {
         display: flex;
     }
