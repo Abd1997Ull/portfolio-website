@@ -136,7 +136,8 @@ const translations = {
         chat_quick_pricing: "💰 Pricing",
         chat_quick_timeline: "⏱️ Timeline",
         chat_quick_contact: "📞 Contact",
-        chat_placeholder: "Type a message..."
+        chat_placeholder: "Type a message...",
+        contact_subtitle: "Get in touch easily via:"
     },
     ar: {
         home: "الرئيسية",
@@ -275,7 +276,8 @@ const translations = {
         chat_quick_pricing: "💰 الأسعار",
         chat_quick_timeline: "⏱️ المدة",
         chat_quick_contact: "📞 التواصل",
-        chat_placeholder: "اكتب رسالة..."
+        chat_placeholder: "اكتب رسالة...",
+        contact_subtitle: "تواصل معي بسهولة عبر:"
     }
 };
 

@@ -551,13 +551,12 @@
                 <input type="text" id="search-input" class="form-input" style="max-width: 300px;"
                     data-i18n-placeholder="search_placeholder" placeholder="Search projects...">
                 <div class="filter-group" style="display: flex; gap: 0.5rem;">
-                    <button class="btn filter-btn active ripple" data-filter="all" data-i18n="all">All</button>
-                    <button class="btn filter-btn ripple"
-                        style="background: transparent; color: var(--text-primary); border: 1px solid var(--glass-border);"
-                        data-filter="mobile" data-i18n="mobile">Mobile App</button>
-                    <button class="btn filter-btn ripple"
-                        style="background: transparent; color: var(--text-primary); border: 1px solid var(--glass-border);"
-                        data-filter="web" data-i18n="web">Website</button>
+                    <button class="btn filter-btn active ripple" data-filter="all" data-i18n="all"
+                        onclick="filterProjects('all')">All</button>
+                    <button class="btn filter-btn ripple" data-filter="mobile" data-i18n="mobile"
+                        onclick="filterProjects('mobile')">Mobile App</button>
+                    <button class="btn filter-btn ripple" data-filter="web" data-i18n="web"
+                        onclick="filterProjects('web')">Website</button>
                 </div>
             </div>
             <div id="portfolio-grid" class="portfolio-grid"></div>
@@ -567,21 +566,27 @@
     <section id="contact">
         <div class="container">
             <h2 class="section-title fade-in-up" data-i18n="contact_title">Get In Touch</h2>
-            <div class="glass fade-in-up"
-                style="max-width: 600px; margin: 0 auto 2rem auto; padding: 1.5rem; text-align: center;">
-                <h3 style="margin-bottom: 1rem;" data-i18n="contact_info">Contact Information</h3>
-                <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope"
-                        style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
-                        data-i18n="email_address">bnbmwmrnrnmb@gmail.com</span></p>
-                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone"
-                        style="color: var(--accent-color); margin-right: 0.5rem;"></i><span
-                        data-i18n="phone_number">07728306149 / 07882930896</span></p>
-                <p style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp"
-                        style="color: #25D366; margin-right: 0.5rem;"></i><a href="https://wa.me/9647728306149"
-                        target="_blank" style="color: #25D366; text-decoration: none;">WhatsApp: 07728306149</a></p>
-                <p><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 0.5rem;"></i><a
-                        href="https://wa.me/9647882930896" target="_blank"
-                        style="color: #25D366; text-decoration: none;">WhatsApp: 07882930896</a></p>
+            <!-- Modern Contact Icons -->
+            <div class="fade-in-up" style="text-align: center; margin-bottom: 2.5rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;"
+                    data-i18n="contact_subtitle">تواصل معي بسهولة عبر:</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <!-- WhatsApp Icon 1 -->
+                    <a href="https://wa.me/9647728306149" target="_blank" class="contact-social-icon whatsapp-icon"
+                        title="WhatsApp: 07728306149">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- WhatsApp Icon 2 -->
+                    <a href="https://wa.me/9647882930896" target="_blank" class="contact-social-icon whatsapp-icon"
+                        title="WhatsApp: 07882930896">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- Email Icon - Scrolls to Contact Form -->
+                    <a href="#contact-form" onclick="scrollToContactForm(event)" class="contact-social-icon email-icon"
+                        title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
             <div class="glass fade-in-up" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
                 <form id="contact-form">
@@ -743,6 +748,72 @@
                 }, 300);
                 document.body.style.overflow = 'auto';
             }
+        }
+
+        // Scroll to Contact Form Function (for email icon)
+        function scrollToContactForm(event) {
+            event.preventDefault();
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    const firstInput = contactForm.querySelector('input, textarea');
+                    if (firstInput) firstInput.focus();
+                }, 500);
+            }
+        }
+
+        // Filter Projects Function - Global for filter buttons
+        // This will be updated by the module once projects are loaded
+        let cachedProjects = [];
+
+        function filterProjects(category) {
+            // Update active button styling
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Use the global projects array from the module or cached
+            const projects = window._portfolioProjects || cachedProjects;
+            const portfolioGrid = document.getElementById('portfolio-grid');
+
+            if (!portfolioGrid || !projects.length) {
+                console.warn('Projects not loaded yet or grid not found');
+                return;
+            }
+
+            // Get current language
+            const currentLang = document.documentElement.getAttribute('lang') || 'en';
+
+            // Helper function to get localized text
+            function getLocalizedText(textObj) {
+                if (typeof textObj === 'string') return textObj;
+                return textObj[currentLang] || textObj.en || '';
+            }
+
+            // Filter projects
+            const filteredProjects = category === 'all'
+                ? projects
+                : projects.filter(p => p.category === category);
+
+            // Render filtered projects
+            portfolioGrid.innerHTML = filteredProjects.map(project => `
+                <div class="project-card fade-in-up visible" data-category="${project.category || 'all'}" onclick="showProjectDetails('${project.id}')">
+                    <img src="${project.image}" alt="${getLocalizedText(project.title)}" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">${getLocalizedText(project.title)}</h3>
+                        <p class="project-desc">${getLocalizedText(project.desc)}</p>
+                        <div class="project-tags">
+                            ${project.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            console.log('Filtered to:', category, '- Found:', filteredProjects.length, 'projects');
         }
 
         // Close modal when clicking outside

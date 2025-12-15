@@ -72,10 +72,36 @@ async function fetchProjects() {
 
         projects = [];
         querySnapshot.forEach((doc) => {
-            projects.push({ id: doc.id, ...doc.data() });
+            const data = doc.data();
+            // Auto-detect category if not defined
+            let category = data.category;
+            if (!category && data.tech) {
+                // Check if it's a mobile app (Flutter, Dart, Android, iOS) or web (HTML, CSS, JavaScript)
+                const mobileKeywords = ['flutter', 'dart', 'android', 'ios', 'mobile', 'app'];
+                const webKeywords = ['html', 'css', 'javascript', 'react', 'vue', 'angular', 'web', 'website'];
+
+                const techLower = data.tech.map(t => t.toLowerCase());
+                const hasMobile = techLower.some(t => mobileKeywords.some(k => t.includes(k)));
+                const hasWeb = techLower.some(t => webKeywords.some(k => t.includes(k)));
+
+                if (hasMobile && !hasWeb) {
+                    category = 'mobile';
+                } else if (hasWeb && !hasMobile) {
+                    category = 'web';
+                } else {
+                    category = 'mobile'; // Default to mobile if mixed or unclear
+                }
+            }
+            projects.push({ id: doc.id, ...data, category: category || 'mobile' });
         });
 
         console.log("Projects fetched:", projects);
+
+        // Expose projects globally for filter function
+        window._portfolioProjects = projects;
+        console.log("window._portfolioProjects assigned:", window._portfolioProjects.length, "projects");
+        console.log("Project categories:", projects.map(p => ({ id: p.id, category: p.category })));
+
         renderProjects(projects);
 
         // Update Project Count Statistic
@@ -291,7 +317,7 @@ function updateLangToggleText() {
 function renderProjects(items) {
     if (!portfolioGrid) return;
     portfolioGrid.innerHTML = items.map(project => `
-        <div class="project-card fade-in-up" onclick="showProjectDetails('${project.id}')">
+        <div class="project-card fade-in-up" data-category="${project.category || 'all'}" onclick="showProjectDetails('${project.id}')">
             <img src="${project.image}" alt="${getLocalizedText(project.title)}" class="project-img">
             <div class="project-info">
                 <h3 class="project-title">${getLocalizedText(project.title)}</h3>
@@ -326,6 +352,9 @@ function renderProjects(items) {
             </div>
         </div>
     `).join('');
+
+    // Re-initialize scroll animations for new cards
+    initScrollAnimations();
 }
 
 // Helper function to get localized text
@@ -334,7 +363,17 @@ function getLocalizedText(textObj) {
     return textObj[currentLang] || textObj.en || '';
 }
 
-function filterProjects(category) {
+// Filter Projects - Made global for button onclick
+window.filterProjects = function (category) {
+    // Update active button styling
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.filter === category) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Filter and render projects
     if (category === 'all') {
         renderProjects(projects);
     } else {
@@ -436,6 +475,20 @@ window.closeCVModal = function () {
             cvModal.style.display = 'none';
         }, 300); // Match transition duration
         document.body.style.overflow = 'auto';
+    }
+};
+
+// Scroll to Contact Form Function (for email icon)
+window.scrollToContactForm = function (event) {
+    event.preventDefault();
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Focus on the first input after scrolling
+        setTimeout(() => {
+            const firstInput = contactForm.querySelector('input, textarea');
+            if (firstInput) firstInput.focus();
+        }, 500);
     }
 };
 
