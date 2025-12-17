@@ -36,7 +36,7 @@ function sendQuickReply(type) {
             },
             contact: {
                 question: "How can I contact you?",
-                answer: "You can reach me via:\n📧 Email: bnbmwmrnrnmb@gmail.com\n📱 WhatsApp: +964 772 830 6149\n\nOr use the contact form on this website. I typically respond within 24 hours!"
+                answer: "You can reach me via:\n📧 Email: bnbmwmrnrnmb@gmail.com\n📱 WhatsApp: +964 788 293 0896\n\nOr use the contact form on this website. I typically respond within 24 hours!"
             }
         },
         ar: {
@@ -50,7 +50,7 @@ function sendQuickReply(type) {
             },
             contact: {
                 question: "كيف أتواصل معك؟",
-                answer: "تقدر تتواصل معي عن طريق:\n📧 الإيميل: bnbmwmrnrnmb@gmail.com\n📱 واتساب: +964 772 830 6149\n\nأو استخدم نموذج التواصل بالموقع. عادةً أرد خلال 24 ساعة!"
+                answer: "تقدر تتواصل معي عن طريق:\n📧 الإيميل: bnbmwmrnrnmb@gmail.com\n📱 واتساب: +964 788 293 0896\n\nأو استخدم نموذج التواصل بالموقع. عادةً أرد خلال 24 ساعة!"
             }
         }
     };
@@ -78,8 +78,8 @@ function sendChatMessage() {
         setTimeout(() => {
             const currentLang = localStorage.getItem('lang') || 'en';
             const autoReply = currentLang === 'ar'
-                ? "شكراً لرسالتك! 😊 راح أرد عليك قريباً. للتواصل السريع، راسلني على واتساب: +964 772 830 6149"
-                : "Thanks for your message! 😊 I'll get back to you soon. For faster response, message me on WhatsApp: +964 772 830 6149";
+                ? "شكراً لرسالتك! 😊 راح أرد عليك قريباً. للتواصل السريع، راسلني على واتساب: +964 788 293 0896"
+                : "Thanks for your message! 😊 I'll get back to you soon. For faster response, message me on WhatsApp: +964 788 293 0896";
             addChatMessage(autoReply, 'bot');
         }, 1000);
     }

@@ -12,7 +12,7 @@ function generatePersonSchema() {
         "url": "https://abdullahstudio.netlify.app/",
         "image": "https://abdullahstudio.netlify.app/favicon.png",
         "email": "bnbmwmrnrnmb@gmail.com",
-        "telephone": "+964-772-8306149",
+        "telephone": "+964-788-2930896",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "IQ"
@@ -20,7 +20,7 @@ function generatePersonSchema() {
         "sameAs": [
             "https://github.com/abdullahsalam",
             "https://linkedin.com/in/abdullahsalam",
-            "https://wa.me/9647728306149"
+            "https://wa.me/9647882930896"
         ],
         "knowsAbout": [
             "Flutter Development",
@@ -117,7 +117,7 @@ function generateOrganizationSchema() {
         "logo": "https://abdullahstudio.netlify.app/favicon.png",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+964-772-8306149",
+            "telephone": "+964-788-2930896",
             "contactType": "customer service",
             "availableLanguage": ["Arabic", "English"]
         },
