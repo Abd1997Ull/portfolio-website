@@ -4,12 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HTTPS Redirect -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+        }
+    </script>
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';">
     <title>404 - Page Not Found | AbdullahStudio</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/variables.css">
     <style>
         * {
@@ -49,8 +62,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
         }
 
         .error-container {
@@ -65,6 +85,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -84,18 +105,25 @@
         }
 
         @keyframes glitch {
-            0%, 90%, 100% {
+
+            0%,
+            90%,
+            100% {
                 transform: translate(0);
             }
+
             92% {
                 transform: translate(-2px, 2px);
             }
+
             94% {
                 transform: translate(2px, -2px);
             }
+
             96% {
                 transform: translate(-2px, -2px);
             }
+
             98% {
                 transform: translate(2px, 2px);
             }
@@ -161,9 +189,12 @@
         }
 
         @keyframes bounce {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
@@ -196,9 +227,12 @@
 
 <body>
     <div class="parallax-bg">
-        <div class="parallax-shape" style="width: 300px; height: 300px; background: var(--accent-color); top: 10%; left: 10%;"></div>
-        <div class="parallax-shape" style="width: 200px; height: 200px; background: var(--accent-glow); top: 60%; right: 15%;"></div>
-        <div class="parallax-shape" style="width: 250px; height: 250px; background: var(--accent-color); bottom: 15%; left: 50%;"></div>
+        <div class="parallax-shape"
+            style="width: 300px; height: 300px; background: var(--accent-color); top: 10%; left: 10%;"></div>
+        <div class="parallax-shape"
+            style="width: 200px; height: 200px; background: var(--accent-glow); top: 60%; right: 15%;"></div>
+        <div class="parallax-shape"
+            style="width: 250px; height: 250px; background: var(--accent-color); bottom: 15%; left: 50%;"></div>
     </div>
 
     <div class="error-container">
@@ -206,7 +240,7 @@
         <div class="error-code">404</div>
         <h1 class="error-title">Oops! Page Not Found</h1>
         <p class="error-message">
-            The page you're looking for seems to have wandered off into the digital void. 
+            The page you're looking for seems to have wandered off into the digital void.
             Don't worry though, we'll help you get back on track!
         </p>
         <div class="btn-group">
@@ -231,7 +265,7 @@
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
-            
+
             shapes.forEach((shape, index) => {
                 const speed = (index + 1) * 20;
                 const x = (mouseX - 0.5) * speed;
